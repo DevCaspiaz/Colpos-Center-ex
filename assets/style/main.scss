@@ -689,7 +689,99 @@ body{
     }
 }
 
+.footer{
+    background-color: #DCF0FF;
+    padding-top: 50px;
+    &__heading{
+        width: 85%;
+        margin: 0 auto;
+        padding-bottom: 50pxg;
+        display: flex;
+        gap: 20px;
+        .ask-question{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 100px;
+            h4{
+                font-size: clamp(1rem, 0.9659rem + 0.1818vw, 1.25rem);
+                font-weight: 700;
+                color: #000000;
+            }
+            span{
+                font-size: clamp(0.8125rem, 0.804rem + 0.0455vw, 0.875rem);
+                font-weight: 300;
+                color: #000000;
+            }
+        }
+        &-form{
+            width: 70%;
+            display: flex;
+            gap: 20px;
+            &__registration{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: max-content;
+                label{
+                    position: relative;
+                    input{
+                        width: 100%;
+                        padding: 10px;
+                        font-size: 20px;
+                        border: none;
+                        outline: none;
+                        border-bottom: 1px solid #80C2FF;
+                        background-color: transparent;
+                        &::placeholder{
+                            color: #000000;
+                        }
+                    }
+                    svg{
+                        position: absolute;
+                        right: 18px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 20px;
+                        fill: #80C2FF;
+                    }
+                }
+                .footer__heading-form__checkbox{
+                    display: flex;
+                    gap: 20px;
+                    input{
+                        width: 20px;
+                    }
+                }
+            }
+            &__question{
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                textarea{
+                    max-width: 350px;
+                    width: 300px;
+                    height: 100px;
+                    padding: 10px;
+                    resize: none;
+                    border-color: #80C2FF;
+                    border-radius: 10px;
+                }
+                button{
+                    width: 100%;
+                    padding: 10px;
+                    font-size: clamp(0.875rem, 0.8494rem + 0.1364vw, 1.0625rem);
+                    color: #FFFFFF;
+                    background-color: #0089ED;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                }
+            }
+        }
 
+    }
+}
 
 
 
