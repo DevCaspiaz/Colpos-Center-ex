@@ -381,7 +381,7 @@ body{
                     cursor: pointer;
                     transition: all .2s;
                     &:hover{
-                        box-shadow: 0 4px 10px #666666;
+                        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
                         background-color: #82c7dabb;
                         color: #FFFFFF;
                     }
@@ -395,7 +395,6 @@ body{
 
 
 .programs{
-    padding: 20px;
     width: 80%;
     margin: 70px auto;
     &__heading{
@@ -436,7 +435,6 @@ body{
             border-radius: 30px;
             cursor: pointer;
             transition: all .2s;
-
             &:hover{
                 box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px, rgba(0, 0, 0, 0.22) 0px 0px 12px;
                 transform: scale(1.02);
@@ -564,11 +562,19 @@ body{
                     color: #666666;
                     background-color: #FFFFFF;
                     border-radius: 10px;
+                    transition: all .2s;
+                    &:hover{
+                        background-color: #0194E6;
+                        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                        color: #FFFFFF;
+                        cursor: pointer;
+                    }
                 }
             }
             @media (max-width: 1050px){
                 grid-column: 1/-1;
             }
+
         }
         .program-item6{
             grid-column: 6/11;
@@ -605,6 +611,85 @@ body{
 }
 
 
+.author{
+    width: 80%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "info image image"
+    "info image image"
+    ;
+    gap: 15px;
+    &__info{
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &-personal{
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            justify-content: space-between;
+            padding: 30px;
+            background-color: #DCEEFF;
+            border-radius: 30px;
+            &__titul{
+                font-size: clamp(1rem, 0.9318rem + 0.3636vw, 1.5rem);
+                font-weight: 400;
+                color: #000000;
+            }
+            &__name{
+                font-size: clamp(1.125rem, 1.0227rem + 0.5455vw, 1.875rem);
+                font-weight: 500;
+                color: #000000;
+            }
+        }
+        &-exp{
+            &__year{
+                margin-bottom: 20px;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                &>span{
+                    font-size: clamp(0.8125rem, 0.804rem + 0.0455vw, 0.875rem);
+                    font-weight: 300;
+                    color: #000000;
+                }
+                .exp-years{
+                    color: #0089ED;
+                    font-size: clamp(1rem, 0.9489rem + 0.2727vw, 1.375rem);
+                    font-weight: 500;
+                }
+            }
+            &__text{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding-left: 20px;
+                span{
+                    font-size: clamp(0.8125rem, 0.804rem + 0.0455vw, 0.875rem);
+                    font-weight: 400;
+                    color: #000000;
+                }
+                
+            }
+        }
+    }
+
+    &__img{
+        grid-area: image;
+        img{
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 30px;
+        }
+    }
+}
+
+
 
 
 
@@ -633,7 +718,23 @@ body{
             }
         }
     }
-
+    .author{
+        grid-template-areas: 
+        "info info info"
+        "image image image"
+        ;
+        align-items: center;
+        &__info{
+            flex-direction: row;
+            &-personal{
+                flex-basis: 45%;
+                gap: 30px;
+            }
+            &-exp{
+                flex-basis: 55%;
+            }
+        }
+    }
 }
 @media (max-width:510px){
     .header{
@@ -749,4 +850,13 @@ body{
             }
         }
     }
-}
+
+    .author{
+        &__info{
+            flex-direction: column;
+            &-personal{
+                gap: 20px;
+            }
+        }
+    }
+}   
